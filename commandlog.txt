@@ -1,0 +1,35 @@
+
+####################################################################################################
+# Starting pipeline at Sun Mar 14 13:47:51 PDT 2021
+# Input files:  [rawdata/BsrDI_rep1.fastq.gz, rawdata/BsrDI_rep2.fastq.gz, rawdata/NbBsrDI_NotI_1_10_rep1.fastq.gz, rawdata/NbBsrDI_NotI_1_10_rep2.fastq.gz, rawdata/NbBsrDI_rep1.fastq.gz, rawdata/NbBsrDI_rep2.fastq.gz, rawdata/Undigested.fastq.gz]
+# Output Log:  .bpipe/logs/29283.log
+# Stage FastQC (NbBsrDI_NotI_1_10_rep1)
+# Stage FastQC (NbBsrDI_rep1)
+# Stage FastQC (NbBsrDI_NotI_1_10_rep2)
+# Stage FastQC (NbBsrDI_rep2)
+# Stage FastQC (Undigested)
+# Stage FastQC (BsrDI_rep2)
+# Stage Trimmomatic (NbBsrDI_NotI_1_10_rep1)
+# Stage Trimmomatic (BsrDI_rep1)
+# Stage Trimmomatic (NbBsrDI_rep2)
+# Stage Trimmomatic (NbBsrDI_NotI_1_10_rep2)
+# Stage Trimmomatic (NbBsrDI_rep1)
+# Stage FastQC (BsrDI_rep1)
+# Stage Trimmomatic (BsrDI_rep2)
+# Stage Trimmomatic (Undigested)
+module load fastqc/0.11.5 &&  fastqc --extract --quiet -o .../project/qc/fastqc rawdata/BsrDI_rep2.fastq.gz
+module load trimmomatic/0.36 &&  java -jar /fsimb/common/tools/trimmomatic/0.36//trimmomatic-0.36.jar SE -phred33  -threads 4 rawdata/NbBsrDI_rep1.fastq.gz .../project/rawdata_trimmed/NbBsrDI_rep1_trimmed.fastq.gz ILLUMINACLIP:.../TruSeq3-SE.fa:2:30:10 SLIDINGWINDOW:4:15 MINLEN:36
+module load trimmomatic/0.36 &&  java -jar /fsimb/common/tools/trimmomatic/0.36//trimmomatic-0.36.jar SE -phred33  -threads 4 rawdata/BsrDI_rep2.fastq.gz .../project/rawdata_trimmed/BsrDI_rep2_trimmed.fastq.gz ILLUMINACLIP:.../TruSeq3-SE.fa:2:30:10 SLIDINGWINDOW:4:15 MINLEN:36
+module load trimmomatic/0.36 &&  java -jar /fsimb/common/tools/trimmomatic/0.36//trimmomatic-0.36.jar SE -phred33  -threads 4 rawdata/NbBsrDI_rep2.fastq.gz .../project/rawdata_trimmed/NbBsrDI_rep2_trimmed.fastq.gz ILLUMINACLIP:.../TruSeq3-SE.fa:2:30:10 SLIDINGWINDOW:4:15 MINLEN:36
+module load trimmomatic/0.36 &&  java -jar /fsimb/common/tools/trimmomatic/0.36//trimmomatic-0.36.jar SE -phred33  -threads 4 rawdata/NbBsrDI_NotI_1_10_rep1.fastq.gz .../project/rawdata_trimmed/NbBsrDI_NotI_1_10_rep1_trimmed.fastq.gz ILLUMINACLIP:.../TruSeq3-SE.fa:2:30:10 SLIDINGWINDOW:4:15 MINLEN:36
+module load trimmomatic/0.36 &&  java -jar /fsimb/common/tools/trimmomatic/0.36//trimmomatic-0.36.jar SE -phred33  -threads 4 rawdata/NbBsrDI_NotI_1_10_rep2.fastq.gz .../project/rawdata_trimmed/NbBsrDI_NotI_1_10_rep2_trimmed.fastq.gz ILLUMINACLIP:.../TruSeq3-SE.fa:2:30:10 SLIDINGWINDOW:4:15 MINLEN:36
+module load trimmomatic/0.36 &&  java -jar /fsimb/common/tools/trimmomatic/0.36//trimmomatic-0.36.jar SE -phred33  -threads 4 rawdata/BsrDI_rep1.fastq.gz .../project/rawdata_trimmed/BsrDI_rep1_trimmed.fastq.gz ILLUMINACLIP:.../TruSeq3-SE.fa:2:30:10 SLIDINGWINDOW:4:15 MINLEN:36
+module load trimmomatic/0.36 &&  java -jar /fsimb/common/tools/trimmomatic/0.36//trimmomatic-0.36.jar SE -phred33  -threads 4 rawdata/Undigested.fastq.gz .../project/rawdata_trimmed/Undigested_trimmed.fastq.gz ILLUMINACLIP:.../TruSeq3-SE.fa:2:30:10 SLIDINGWINDOW:4:15 MINLEN:36
+module load fastqc/0.11.5 &&  fastqc --extract --quiet -o .../project/qc/fastqc rawdata/NbBsrDI_rep1.fastq.gz
+module load fastqc/0.11.5 &&  fastqc --extract --quiet -o .../project/qc/fastqc rawdata/NbBsrDI_NotI_1_10_rep2.fastq.gz
+module load fastqc/0.11.5 &&  fastqc --extract --quiet -o .../project/qc/fastqc rawdata/Undigested.fastq.gz
+module load fastqc/0.11.5 &&  fastqc --extract --quiet -o .../project/qc/fastqc rawdata/NbBsrDI_rep2.fastq.gz
+module load fastqc/0.11.5 &&  fastqc --extract --quiet -o .../project/qc/fastqc rawdata/NbBsrDI_NotI_1_10_rep1.fastq.gz
+module load fastqc/0.11.5 &&  fastqc --extract --quiet -o .../project/qc/fastqc rawdata/BsrDI_rep1.fastq.gz
+# ################ Finished at Sun Mar 14 13:47:54 PDT 2021 Duration = 2.719 seconds #################
+
