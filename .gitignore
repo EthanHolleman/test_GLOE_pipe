@@ -1,6 +1,7 @@
 .bpipe/
 old/
 rawdata/
+rawdata_trimmed/
 mapped/
 genome/
 *.out
