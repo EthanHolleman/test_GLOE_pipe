@@ -1,1 +1,6 @@
 .bpipe/
+old/
+rawdata/
+mapped/
+genome/
+*.out
